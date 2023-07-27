@@ -6,7 +6,7 @@ public class Week4Coding {
 
 		
 		// Step 1
-		int [] ages = {3, 9, 23, 64, 2, 8, 28, 93}; // created an array age and used .length - to get the last value in the array and subtract it from the first element  
+		int [] ages = {3, 9, 23, 64, 2, 8, 28, 93}; // created an array age and used .length -1 to get the last value in the array and subtract it from the first element  
 		int sum = ages[ages.length-1] - ages [0]; 
 		
 		int [] ages2 = {3, 9, 23, 64, 2, 8, 28, 93, 96};
@@ -17,7 +17,7 @@ public class Week4Coding {
 		
 		double total = 0;
 		
-		for (int i =0; i<ages2.length;i++) { // used a for loop to iterate through the array. create the variable call total to hold the value of all the elements in the array
+		for (int i =0; i<ages2.length;i++) { // used a for loop to iterate through the array. create the variable called total to hold the value of all the elements in the array
 			total += ages2[i];								// divided the totals by all the elements in the array. 
 			
 		}
@@ -28,7 +28,7 @@ public class Week4Coding {
 		String [] names = { "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"}; // used the for loop to iterate through the array. used sum += to set the sum equal to the number of characters in the array 
 		sum = 0; 															// in the for loop using the .length method to return the size of the array. 
 																			// using .lenght() to return the # of characters in the string
-		for (int i = 0; i < names.length; i++) {                            // created a double call average that is going to = the sum which is the number of characters / size of the array. 
+		for (int i = 0; i < names.length; i++) {                            // created a double called average that is going to = the sum which is the number of characters / size of the array. 
 			sum += names[i].length();                                       // using [i] to access each element in the array
 		}	
 		double average = sum /names.length; 
@@ -52,24 +52,25 @@ public class Week4Coding {
 			
 			
 		// Step 5
-			int [] nameLengths = new int [names.length];
-			
+			int [] nameLengths = new int [names.length];   // get the length of each name and assign to corresponding names length element 
+			                                                // then print out each value in namesLength
 			for (int i = 0; i < names.length; i++) {
 					nameLengths[i] = names [i].length();
+					System.out.println(nameLengths[i]);
 			} 
 		// Step 6	                                                 
 			sum = 0;
 			for (int i = 0; i < nameLengths.length; i++) {        // using the nameLegths array that was created in the pervious step. 
 				sum += nameLengths[i];								// using the sum += to the sum equal to the number of characters in the array. 
-			}                                                       // names.lenghts [i] to iternate through each value in the array
+			}                                                       // names.lenghts [i] to iterate through each value in the array
 			System.out.println("The sum of all lengths in nameLengths[] = " + sum);
 	
 		// Step 7 
 			String word = "Lemon";
 			int n = 5; 
 			String words = "";
-		//	String result = repeatWord(word,n); 
-			System.out.println(n);
+			words = repeatWords(word,n); 
+			System.out.println(words);
 		
 		// Step 8
 			String firstName = "Mike";                                  // method comments down below. 
@@ -111,12 +112,13 @@ public class Week4Coding {
 	}
 		// step 7 method
 	
-	//	public static String repeatWord(String word, int n) {
-		//		 words = ""; 
-		//	for (int i = 0; i < n; i++) {
-		//		String repeatWord += word; 
-		//		} return result; 
-		//	}	
+		public static String repeatWords(String word, int n) { // set the variable words as an empty string to pass word Lemon Through 
+			String words = "";                                  // set words = repeatWords which is the name of the Method 
+			for (int i = 0; i < n; i++) {                       // n = 5 the numbers of times we want to print out the word 
+				words += word;                                  // returning words and then calling on Words above in the sysout. 
+			}
+			return words;
+		}
 				
 		
 	
@@ -130,7 +132,7 @@ public class Week4Coding {
 	// step 9 method 
 		
 		public static boolean sumOfArray(int input[]) {                       // created a boolean method using an array call SumOfArray
-				int sum = 0;                                                  // boolean variable isGreater is sent to the method name sumofArray and the array rages from the first step.
+				int sum = 0;                                                  // boolean variable isGreater is sent to the method named sumofArray and the array ages from the first step.
 			for (int i = 0; i < input.length; i++) {                          // using the for loop to iterate through all the elments in the array. 
 					sum += input[i];                                          // using sum to total up all the ages and then going to return if the sum is > than 100
 			}																	// above I call the boolean variable isGreater and the sytem.out.println and it prints out true 
@@ -141,7 +143,7 @@ public class Week4Coding {
 		public static double averageTestScoreArray(double testScores[]) {    // created an array called double testScores. 
 				double sum = 0;                                              // double sum because the number will be a decimal. For loop created to iterate through the array and .length to return all the elements of the array.
 			for (int i = 0; i < testScores.length; i++) {                      // testscore [i] to add up all the elements of the array into sum. dividing sum by all the elements of the array. 
-					sum += testScores[i];                                      // prinitng out the variable averageTest which is tied to the method averageTestScoreArray(testScores);
+					sum += testScores[i];                                      // printing out the variable averageTest which is tied to the method averageTestScoreArray(testScores);
 			}
 			return (sum / testScores.length); 
 		}
@@ -161,19 +163,19 @@ public class Week4Coding {
 			return retVal; 
 		}
 	
-		public static boolean willBuyDrink (boolean isHotOutSide, double moneyInPocket) {  //created a boolean method. created a if statement that will look to is if it is hot outside && if the person has greater than $12.00 in their po
-			boolean returnVal = false;                                                     // created a boolean variable that is = to the method. boolean myResult2 = willBuyDrink(isHotOutside, moneyInPocket); 
-			if (isHotOutSide && moneyInPocket >10.50) {
+		public static boolean willBuyDrink (boolean isHotOutSide, double moneyInPocket) {  //created a boolean method. created a if statement that will look to is if it is hot outside && if the person has greater than $10.50 in their pocket
+			boolean returnVal = false;                                                     // created a boolean variable that is = to the method. boolean myResult2 = willBuyDrink(isHotOutside, moneyInPocket); isHotOutSide and moneyInPocket is the arguement.
+			if (isHotOutSide && moneyInPocket >10.50) {                                      // sent the returnVal = to true and false. Return the returnVal which was true because it was hot outside and the person had great than 10.50 in their pocket. 
 				returnVal = true; 
 			}
 			return returnVal; 
 		}
-		/// this method fines the best grades in an array of grades 
-		public static double getBestGrade(double grades[]) { 
+		/// this method finds the best grades in an array of grades 
+		public static double getBestGrade(double grades[]) {          // getBestGrade is using the values set in the testScores Array
 				double bestGrade = 0; 
-			for (int i = 0; i < grades.length; i++) {
-				if (grades[i] > bestGrade) {
-					bestGrade = grades[i]; 
+			for (int i = 0; i < grades.length; i++) {                  // using a for loop to iterate through the entire length of the array. 
+				if (grades[i] > bestGrade) {                           // using bestGrade =0 to pass the grades through for loop when the next element in the for loop goes through the array it will compare it to best grade and then work its way through the loop. 
+					bestGrade = grades[i];                             // we will return the best grade. and will call the variable double myResult3 = getBestGrade(testScores3); which is tied to the method. 
 				}
 			} 
 			return bestGrade;
