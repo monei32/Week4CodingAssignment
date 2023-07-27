@@ -1,4 +1,8 @@
-
+/**
+ * Week 4 Coding Assignment
+ * @author Micheal O'Neil
+ * @version 1.1
+ */
 public class Week4Coding {
 
 	public static void main(String[] args) {
